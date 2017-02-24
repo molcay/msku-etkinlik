@@ -1,0 +1,46 @@
+
+scrapy
+scrapy startproject ep_members
+ls
+cd ep_members/
+ls
+cd ep_members/
+ls
+scrapy shell http://www.europarl.europa.eu/meps/en/124831/ISABELLA_ADINOLFI_home.html
+scrapy shell http://www.europarl.europa.eu/meps/en/124990/LARS_ADAKTUSSON_home.html
+cd ..
+ls
+scrapy genspider -l
+scrapy genspider members www.europarl.europa.eu
+ls
+cd ep_members/
+ls
+cd spiders
+ls
+scrapy
+spider runspider members
+scrapy runspider members
+scrapy crawl members
+cd ..
+ls
+cd ..
+ls
+scrapy crawl members
+ls
+ls -a
+ls .scrapy
+ls .scrapy httpcache
+ls .scrapy/httpcache
+ls .scrapy/httpcache/members/
+ls .scrapy/httpcache/members/18
+ls .scrapy/httpcache/members/18/18b136daeceb247fd3dbf3f2622eeb830ea64d0b/
+cat .scrapy/httpcache/members/18/18b136daeceb247fd3dbf3f2622eeb830ea64d0b/response_body 
+cat .scrapy/httpcache/members/18/18b136daeceb247fd3dbf3f2622eeb830ea64d0b/
+scrapy crawl members
+rm members.json; scrapy crawl members -o members.json
+scrapy shell http://www.europarl.europa.eu/meps/en/124990/LARS_ADAKTUSSON_home.html
+rm members.json; scrapy crawl members -o members.json
+scrapy shell http://www.europarl.europa.eu/meps/en/124990/LARS_ADAKTUSSON_home.html
+rm members.json; scrapy crawl members -o members.json
+python
+rm members.json; scrapy crawl members -o members.json

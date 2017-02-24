@@ -1,0 +1,3 @@
+response.css("li.mep_name a::attr(title)")[0].extract()
+
+links = response.css("li.mep_name a::attr(href)").extract()
