@@ -5,11 +5,15 @@ import scrapy
 class MembersSpider(scrapy.Spider):
     name = "members"
     allowed_domains = ["www.europarl.europa.eu"]
-    start_urls = ['http://www.europarl.europa.eu/meps/en/full-list.html?filter=all&leg=']
-
+    
+    start_urls = []
+    letters = "ABCDE"
+    for c in letters:
+        start_urls.append("http://www.europarl.europa.eu/meps/en/full-list.html?filter={}&leg=".format(c))
+        
     def parse(self, response):
     	links = response.css("li.mep_name a::attr(href)").extract()
-    	for l in links:
+    	for l in links[:5]:
     		l = response.urljoin(l)
     		yield scrapy.Request(l, callback=self.parse_member)
     		print(l)

@@ -8,7 +8,12 @@
 import scrapy
 
 
-class EpMembersItem(scrapy.Item):
+class Member(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    name = scrapy.Field()
+    country = scrapy.Field()
+    email = scrapy.Field()    
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
     pass

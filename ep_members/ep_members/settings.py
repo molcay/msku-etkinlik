@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'ep_members.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ep_members (+http://www.yourdomain.com)'
+USER_AGENT = 'ep_members (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -64,9 +64,17 @@ DOWNLOAD_DELAY = 1
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'ep_members.pipelines.EpMembersPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'scrapy.pipelines.images.ImagesPipeline': 1,
+   'ep_members.pipelines.EpMembersPipeline': 300,
+   'ep_members.pipelines.JsonWriterPipeline': 900,
+}
+
+# for Image pipeline
+IMAGES_STORE = './images'
+IMAGES_THUMBS = {
+    'small': (100, 100)
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -1,0 +1,26 @@
+cd scrapy-etkinlik/
+ls
+cd ep_members/
+ls
+scrapy crawl members
+scrapy crawl members -o members.json
+ls
+cd ep_members/
+ls
+cd spiders/
+ls
+cp members.py members2.py 
+cd ..
+ls
+cd ..
+ls
+rm members.json; scrapy crawl members2 -a letter=H
+ls
+rm members.json; scrapy crawl members2 -a letter=H -o members.json
+sudo pip install Pillow
+pip install Pillow
+rm members.json; scrapy crawl members2 -a letter=H -o members.json
+ls
+rm members.json; scrapy crawl members2 -a letter=H -o members.json
+ls
+rm members.json; scrapy crawl members2 -a letter=H -o members.json
