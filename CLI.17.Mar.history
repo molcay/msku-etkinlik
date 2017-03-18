@@ -1,0 +1,17 @@
+cd scrapy-etkinlik/
+scrapy
+scrapy startproject altyazi
+cd altyazi
+scrapy genspider filmler www.turkcealtyazi.org
+scrapy shell http://www.turkcealtyazi.org/filtre.php?yil=2014&sira=1&tip=1
+response.css("td.rowbeyaz:nth-child(2)"
+ps
+kill -9 17253
+ps
+scrapy shell 'http://www.turkcealtyazi.org/filtre.php?yil=2014&sira=1&tip=1'
+scrapy crawl altyazi
+scrapy crawl filmler
+scrapy crawl filmler -o data.json
+scrapy shell 'http://www.turkcealtyazi.org/mov/0133093/the-matrix.html'
+scrapy crawl filmler -o data.json
+rm data.json; scrapy crawl filmler -o data.json
